@@ -1,23 +1,9 @@
 /**
- * @param {number[]} nums
- * @param {number} val
+ * @param {number} n
  * @return {number}
  */
-var removeElement = function(nums, val) {
-    let start = 0
-    let end = nums.length - 1
-
-    while (start <= end) {
-        if(nums[end] === val){
-            nums.pop()
-            end--
-        } else if (nums[start] === val) {
-            nums[start] = nums[end]
-            nums.pop()
-            end--
-            start++
-        } else {
-            start++
-        }
-    }
+var fib = function(n) {
+    
+    if(n <= 1) return n
+    return fib(n - 1) + fib(n - 2)
 };
