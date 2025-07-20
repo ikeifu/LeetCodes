@@ -18,14 +18,11 @@ var romanToInt = function(s) {
     for(let i = 0; i < romanNum.length; i++){
         const curLet = romanNum[i]
         const lastLet = romanNum[i-1]
-        if (curLet !== 'I' && curLet !== 'X' && curLet !== 'C'){
+        if (curLet !== 'I' && curLet !== 'X' && curLet !== 'C' && !lastLet){
             accumulator += dict[curLet]
-        } else if(lastLet){
-           dict[curLet] < dict[lastLet] ? accumulator -= dict[curLet] : accumulator += dict[curLet]
         } else {
-            accumulator += dict[curLet]
+           dict[curLet] < dict[lastLet] ? accumulator -= dict[curLet] : accumulator += dict[curLet]
         }
     }
-    // console.log(accumulator)
     return accumulator
 };
