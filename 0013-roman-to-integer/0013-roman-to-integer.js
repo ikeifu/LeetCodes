@@ -21,7 +21,6 @@ var romanToInt = function(s) {
         if (curLet !== 'I' && curLet !== 'X' && curLet !== 'C'){
             accumulator += dict[curLet]
         } else if(lastLet){
-            console.log('hi')
            dict[curLet] < dict[lastLet] ? accumulator -= dict[curLet] : accumulator += dict[curLet]
         } else {
             accumulator += dict[curLet]
